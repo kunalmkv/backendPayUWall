@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+//const morgan = require('morgan');
 
 const https = require('https');
 
@@ -26,7 +26,7 @@ const newUserRoutes = require('./routes/newUser');
 const existingUserRoutes = require('./routes/existingUser');
 const expenseRoutes = require('./routes/expense');
 const passwordRoutes = require('./routes/password');
-const { default: helmet } = require('helmet');
+
 
 const PORT = process.env.port || 3000;
 
@@ -35,8 +35,8 @@ const PORT = process.env.port || 3000;
 
 const app = express();
 
-app.use(helmet());
-app.use(morgan('combined', { stream: accessLogStream }));
+
+
 app.use(cors());
 app.use(bodyParser.json());
 
