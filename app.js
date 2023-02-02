@@ -14,7 +14,7 @@ const purchaseRoutes = require('./routes/purchase');
 const premiumRoute = require('./routes/premium');
 
 
-// get config vars
+// get config vars done
 dotenv.config();
 
 
