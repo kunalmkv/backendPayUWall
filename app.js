@@ -41,7 +41,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, `public${req.url}`))
+})
 app.use('/premium', premiumRoute);
 app.use('/newUser', newUserRoutes);
 app.use('/existingUser', existingUserRoutes);
