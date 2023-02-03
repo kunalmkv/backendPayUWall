@@ -11,7 +11,7 @@ async function newUserSave(event) {
         pw
     }
     try {
-        await axios.post("http://18.217.120.128:3000/newUser/add", obj).then(response => {
+        await axios.post("http://localhost:3000/newUser/add", obj).then(response => {
 
             alert('Registered Successfully. Login!!');
         })
@@ -31,7 +31,7 @@ async function userLogin(event) {
         pw
     }
     try {
-        await axios.post("http://18.217.120.128:3000/existingUser/login", loginDetail).then(response => {
+        await axios.post("http://localhost:3000/existingUser/login", loginDetail).then(response => {
             if (response.status === 200) {
                 alert(response.data.message);
                 localStorage.setItem('token', response.data.token);
@@ -58,7 +58,7 @@ function showforgetpasswordForm() {
 
 
 /*window.addEventListener("DOMContentLoaded", () => {
-    axios.get("http://18.217.120.128:3000/admin/get-expense").then((response) => {
+    axios.get("http://localhost:3000/admin/get-expense").then((response) => {
         console.log(response);
         for (var i = 0; i < response.data.allUsers.length; i++) {
             showMeUser(response.data.allUsers[i]);
@@ -88,7 +88,7 @@ function showforgetpasswordForm() {
 }
 async function deleteUser(userId) {
     try {
-        await axios.delete(`http://18.217.120.128:3000/admin/delete-expense/${userId}`)
+        await axios.delete(`http://localhost:3000/admin/delete-expense/${userId}`)
             .then((response) => {
                 removeFromScreen(userId);
             })
@@ -100,7 +100,7 @@ async function deleteUser(userId) {
 }*/
 /*function deleteUser(userId) {
 
-    axios.delete(`http://18.217.120.128:3000/admin/delete-expense/${userId}`)
+    axios.delete(`http://localhost:3000/admin/delete-expense/${userId}`)
         .then((response) => {
             removeFromScreen(userId);
         })
@@ -127,7 +127,7 @@ async function deleteUser(userId) {
         category: cate
     }
     try {
-        await axios.put(`http://18.217.120.128:3000/admin/edit-expense/${userId}`, editObj)
+        await axios.put(`http://localhost:3000/admin/edit-expense/${userId}`, editObj)
             .then((response) => {
                 //removeFromScreen(userId);
                 deleteUser(userId);
@@ -148,7 +148,7 @@ function removeFromScreen(userId) {
 }*/
 /*window.addEventListener("DOMContentLoaded", async () => {
     try {
-        await axios.get("http://18.217.120.128:3000/admin/get-expense").then((response) => {
+        await axios.get("http://localhost:3000/admin/get-expense").then((response) => {
             console.log(response);
             for (var i = 0; i < response.data.allUsers.length; i++) {
                 showMeUser(response.data.allUsers[i]);

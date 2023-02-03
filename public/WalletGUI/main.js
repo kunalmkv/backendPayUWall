@@ -1,4 +1,4 @@
-const backendAPI = 'http://18.217.120.128:3000';
+const backendAPI = 'http://localhost:3000';
 function showPremiumUserMessage() {
     document.getElementById('rzp-button1').style.visibility = "hidden";
     document.getElementById('premium_user').innerHTML = "💎💎 Premium User💎💎"
@@ -150,7 +150,7 @@ async function deleteUser(userId) {
 }
 /*function deleteUser(userId) {
 
-    axios.delete(`http://18.217.120.128:3000/admin/delete-expense/${userId}`)
+    axios.delete(`http://localhost:3000/admin/delete-expense/${userId}`)
         .then((response) => {
             removeFromScreen(userId);
         })
